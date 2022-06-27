@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>pets</mat-icon>
+   </button>
+   <span>Projeto Dogs</span>
+   <span class="example-spacer"></span>
+   <button mat-raised-button color="basic" (click)="getDog()">Gerar Imagem</button>
+</mat-toolbar>
+<div class="container">
+    <div class="polaroid" *ngIf="this.dog">
+        <div class="card-imagem">
+            <img class="imagemDog" [src]="this.dog.url">
+        </div>
+        <h1 class="info"><b>Tamanho do Arquivo:</b> {{(this.dog.fileSizeBytes / 1024).toFixed(1)}}KB</h1>
+        <button mat-raised-button color="warn" (click)="getDog()" style="margin-left: 20em; margin-top: 0.8em;">Trocar Imagem</button>
+    </div>
+</div>
